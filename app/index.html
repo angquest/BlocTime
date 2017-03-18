@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="BlocTime" ng-cloak>
+    <!--  ng-cloak hides the unformatted the elements prior to the quick format of angular  -->
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>BlocTime</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link href="styles/main.css" type="text/css" rel="stylesheet">
+        <!-- Angular -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.0/buzz.min.js"></script>
+        <script src="scripts/controllers/CountDownCtrl.js"></script>
+        <script src="scripts/controllers/ButtonClickCtrl.js"></script>
+        <script src="scripts/filters/timeCode.js"></script>
+    </head>
+    <body class="landing">
+        <div ng-controller="CountDownCtrl">
+            <div class="button-container">
+                <p class="count-down" ng-bind="counter | timeCode"></p>
+                <!-- This button handles work -->
+                <button class="button-box button-text" ng-click="startTimer()" ng-show="buttonText">Start</button>
+                     <!-- need to add ng-show="start" ng-bind="buttonText" ng-show="buttonText"-->
+<!--                <button class="button-box button-text" ng-click="" ng-hide="buttonText">Reset</button>-->
+
+            </div>
+        </div>
+        <!-- AngularFire -->
+        <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+        
+        <!-- Add firebase to your web app -->       
+        <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDLfVFUPboMyiDF0ur4LrDsM_W5el93VK4",
+            authDomain: "bloctime-5982c.firebaseapp.com",
+            databaseURL: "https://bloctime-5982c.firebaseio.com",
+            storageBucket: "bloctime-5982c.appspot.com",
+            messagingSenderId: "739671727818"
+          };
+          firebase.initializeApp(config);
+        </script>
+        
+    </body>
+
+</html>
