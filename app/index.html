@@ -16,16 +16,22 @@
         <script src="scripts/filters/timeCode.js"></script>
     </head>
     <body class="landing">
-        <div ng-controller="CountDownCtrl">
-            <div class="button-container">
-                <p class="count-down" ng-bind="counter | timeCode"></p>
-                <!-- This button handles work -->
-                <button class="button-box button-text" ng-click="startTimer()" ng-show="buttonText">Start</button>
-                     <!-- need to add ng-show="start" ng-bind="buttonText" ng-show="buttonText"-->
-<!--                <button class="button-box button-text" ng-click="" ng-hide="buttonText">Reset</button>-->
-
+        <section>
+            <div ng-controller="CountDownCtrl">
+                <div class="button-container">
+                    <p class="count-down" ng-bind="counter | timeCode"></p>
+                    <div>
+                        <button class="button-box button-text" ng-click="startTimer()" ng-show="!isTimerRunning && !breakTime">Start</button>
+                    </div>
+                    <div>
+                        <button class="button-box button-text" ng-click="resetTimer()" ng-show="isTimerRunning">Reset</button>
+                    </div>
+                    <div>
+                        <button class="button-box button-text" ng-click="startTimer()" ng-show="breakTime && !isTimerRunning">Break</button>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
         <!-- AngularFire -->
         <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
         

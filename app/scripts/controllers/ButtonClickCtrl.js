@@ -1,5 +1,5 @@
 angular 
-    .module('BlocTime', [])
+    .module('BlocTime')
     .controller('ButtonClickCtrl', function($scope, $filter){
     
     

@@ -19,7 +19,7 @@
     };
     
     angular
-        .module('BlocTime', [])
+        .module('BlocTime')
         .filter('timeCode', timeCode);
     
 })();
