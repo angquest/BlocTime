@@ -26,6 +26,11 @@ body {
     margin: auto; 
 }
 
+.break-time {
+    color: coral;
+    
+}
+
 .count-down {
     color: black;
     font-size: 50px;
