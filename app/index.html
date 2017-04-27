@@ -18,8 +18,6 @@
     <body class="landing">
         <section>
             <div ng-controller="CountDownCtrl">
-                <h1 class="break-time">BREAKTIME</h1>
-<!--                ng-show="onBreak"-->
                 <div class="button-container">
                     <p class="count-down" ng-bind="counter | timeCode"></p>
                     <div>
@@ -30,6 +28,9 @@
                     </div>
                     <div>
                         <button class="button-box button-text" ng-click="startTimer()" ng-show="onBreak && !isTimerRunning">Start</button>
+                    </div>
+                    <div class="break-time">
+                        <h1 ng-show="onBreak">BREAKTIME</h1>
                     </div>
                 </div>
             </div>

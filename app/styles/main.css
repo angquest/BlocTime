@@ -27,8 +27,9 @@ body {
 }
 
 .break-time {
-    color: coral;
-    
+    color: #ff5618;
+    position: absolute;
+    font-weight: 300;
 }
 
 .count-down {

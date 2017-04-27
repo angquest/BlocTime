@@ -1,10 +1,12 @@
 angular
     .module('BlocTime')
-    .controller('CountDownCtrl', function($scope, $interval, $filter) {
+    .controller('CountDownCtrl', function($scope, $interval, $filter, $log) {
     
-    var workTimer = 1500;
-    var shortBreak = 300;
-    
+    var workTimer = 7; //1500
+    var shortBreak = 4; //300
+    var longBreak = 10; //1800
+
+    $scope.completedWorkSession = 1;
     $scope.counter = workTimer;
     $scope.buttonText = "Start";
     $scope.isTimerRunning = false;
@@ -21,7 +23,8 @@ angular
         } else if($scope.onBreak === true) {
             $scope.counter = workTimer;
             $scope.onBreak = false;
-        }
+            $scope.completedWorkSession++;
+        } 
     };
     
     $scope.startTimer = function(){
@@ -44,7 +47,13 @@ angular
     
     $scope.breakTimer = function() {
         $scope.onBreak = true;
-        $scope.counter = shortBreak;
+        if($scope.completedWorkSession % 4 === 0) {
+            console.log($scope.completedWorkSession);
+            $scope.counter = longBreak;
+            $scope.completedWorkSession = 1;
+        } else {
+            $scope.counter = shortBreak;
+        }
     };
         
 //        //work timer
