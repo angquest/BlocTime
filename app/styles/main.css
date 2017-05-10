@@ -14,9 +14,63 @@ body {
     
 }
 
+.main {
+    transition: margin-left .4s;
+    margin-left: 0!important;
+    margin-right: 0!important;
+    width: 100;
+    text-align: left;
+}
+
+#main {
+    transition: margin-left .4s;
+}
+
+.sidebar {
+    height: 100%;
+/*    width: 400px; did not change anything when commented out */
+    background-color: #D8D8D8;
+    position: fixed!important; /* changes overall size and look of sidebar */
+    z-index: 1;
+    overflow: auto;
+}
+
+.close-button {
+/*    width: 100%; makes button 100% to width of sidebar */
+    
+}
+
+h2 {
+    text-align: left;
+    padding: 8px 0 0 16px;
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+
+/*This element controls the hamburger*/
+.sidebar-button { 
+    border: none;
+    display: inline-block;
+    outline: 0;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: left;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 24px!important; /*This controls the size of the hamburger*/
+}
+
+.animate-left {
+    position: relative;
+    animation: animateleft 0.4s;
+}
+
 .button-container {
-    /* need to center everything on page */
-    width: 125px;
+    width: 250px;
     height: 125px;
     position: absolute;
     top:0;
@@ -24,11 +78,11 @@ body {
     left: 0;
     right: 0;
     margin: auto; 
+    text-align: center;
 }
 
 .break-time {
     color: #ff5618;
-    position: absolute;
     font-weight: 300;
 }
 

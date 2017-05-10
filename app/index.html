@@ -12,12 +12,21 @@
         <script src="scripts/app.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.0/buzz.min.js"></script>
         <script src="scripts/controllers/CountDownCtrl.js"></script>
-        <script src="scripts/controllers/ButtonClickCtrl.js"></script>
+        <script src="scripts/controllers/TaskHistoryCtrl.js"></script>
         <script src="scripts/filters/timeCode.js"></script>
+        <script src="scripts/services/Tasks.js"></script>
     </head>
-    <body class="landing">
-        <section>
-            <div ng-controller="CountDownCtrl">
+    <body class="landing" ng-controller="CountDownCtrl">
+            <div class="sidebar animate-left" style="display:none" id="mySidebar">
+                <button class="close-button" ng-click="sidebarClose()">Close &times;</button>
+                <h2>Task History</h2>
+                <input class="completed-task">
+                <button class="add-task">Add Task</button>
+            </div>
+            <div class="main" id="main">
+                <div ng-controller="TaskHistoryCtrl">
+                    <button class="sidebar-button animate-left" ng-click="sidebarOpen()">&#9776;</button>
+                </div>
                 <div class="button-container">
                     <p class="count-down" ng-bind="counter | timeCode"></p>
                     <div>
@@ -34,7 +43,6 @@
                     </div>
                 </div>
             </div>
-        </section>
         <!-- AngularFire -->
         <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
         

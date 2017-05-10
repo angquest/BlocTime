@@ -1,3 +1,5 @@
+//This is a timer that counts down to 0:00
+
 (function() {
     function timeCode() {
       return function(seconds) {
